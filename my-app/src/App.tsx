@@ -1,38 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TaskList from './components/TaskList';
 import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material';
 import Modal from '@mui/material/Modal';
-
+import axios from 'axios';
 import './App.css';
-
-
-const data =[
-  {id:"1",
-  title:"go gym",
-  description:"do squat",
-  complete:true
-  },
-  {
-    id:"2",
-    title:"go supermarket",
-    description:"buy vegetables",
-    complete:false
-
-  },
-  {
-    id:"3",
-    title:"learn python",
-    description:"build todo app",
-    complete:false
-
-  }
-]
-
-
+import { Data } from './components/Data';
 
 function App() {
   const[viewCompleted,setViewCompleted]=useState(false);
- 
+  
+
   function clickCompleted(){
     setViewCompleted(true);
     console.log(viewCompleted);
@@ -94,7 +71,7 @@ function App() {
       <Button onClick={clickUncompleted}>Uncompleted Tasks</Button>
 
 
-      <TaskList viewCompleted={viewCompleted} data={data}></TaskList>
+      <TaskList viewCompleted={viewCompleted}></TaskList>
     </div>
   );
 }
