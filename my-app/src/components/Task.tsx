@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 
 interface TaskProps{
     
@@ -13,7 +14,8 @@ function Task(props:TaskProps){
         <p>Description:{props.description}</p>
         <p>Complete:{props.complete?"yes":"no"}</p>
 
-
+        <Button>Edit</Button>
+        <Button>Delete</Button>
 
     </li>);
 }
